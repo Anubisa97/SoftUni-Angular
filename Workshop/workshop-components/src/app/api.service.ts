@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
-import { Theme } from './themes-lists/types/theme';
-import { User } from './themes-lists/types/user';
+import { Theme } from './types/theme';
+import { User } from './types/user';
 
 @Injectable({
   providedIn: 'root',
