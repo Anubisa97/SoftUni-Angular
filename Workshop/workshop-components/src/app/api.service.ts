@@ -8,7 +8,7 @@ import { Post } from './types/post';
   providedIn: 'root',
 })
 export class ApiService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getThemes() {
     const { apiUrl } = environment;
@@ -17,12 +17,12 @@ export class ApiService {
 
   getTheme(id: string) {
     const { apiUrl } = environment;
-    return this.http.get<Theme>(`${apiUrl}/themes/${id}`)
+    return this.http.get<Theme>(`${apiUrl}/themes/${id}`);
   }
 
   createTheme(themeName: string, postText: string) {
     const { apiUrl } = environment;
-    return this.http.post<Theme>(`${apiUrl} / themes`, { themeName, postText })
+    return this.http.post<Theme>(`${apiUrl} / themes`, { themeName, postText });
   }
 
   getPosts(limit?: number) {
@@ -34,4 +34,9 @@ export class ApiService {
     }
     return this.http.get<Post[]>(`${url}`);
   }
+
+  // getPost(themeId: string) {
+  //   const theme = this.getTheme(themeId)
+  //   const posts = theme.posts;
+  // }
 }
