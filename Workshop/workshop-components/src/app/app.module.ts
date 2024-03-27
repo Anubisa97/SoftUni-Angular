@@ -5,21 +5,24 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ThemeModule } from './theme/theme.module';
 import { ErrorComponent } from './error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ErrorComponent,
+  declarations: [AppComponent, HomeComponent, ErrorComponent],
+  imports: [
+    BrowserModule,
+    CoreModule,
+    SharedModule,
+    HttpClientModule,
+    UserModule,
+    ThemeModule,
+    AppRoutingModule,
   ],
-  imports: [BrowserModule, CoreModule, SharedModule, HttpClientModule, UserModule, ThemeModule, AppRoutingModule,],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
