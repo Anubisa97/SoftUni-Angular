@@ -117,7 +117,15 @@
         </ng-container>
       </ng-container>
 
-      <button>Create Account</button>
+      <button
+        [disabled]="form.invalid"
+        [style]="{
+          opacity: form.invalid ? '60%' : '',
+          cursor: form.invalid ? 'not-allowed' : ''
+        }"
+      >
+        Create Account
+      </button>
 
       <p class="text-center">
         Have an account?

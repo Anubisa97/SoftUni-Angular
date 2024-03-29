@@ -53,7 +53,15 @@
         </p>
       </ng-container>
 
-      <button>Login</button>
+      <button
+        [disabled]="form.invalid"
+        [style]="{
+          opacity: form.invalid ? '60%' : '',
+          cursor: form.invalid ? 'not-allowed' : ''
+        }"
+      >
+        Login
+      </button>
 
       <p class="text-center">
         Have an account?
