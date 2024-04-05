@@ -9,11 +9,11 @@ import { Post } from '../types/post';
 })
 export class PostsListsComponent implements OnInit {
   posts: Post[] = []
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
     this.api.getPosts().subscribe((posts) => {
-      console.log(posts);
+      // console.log(posts);
       this.posts = posts
     });
   }
