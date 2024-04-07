@@ -9,26 +9,26 @@ import { UserService } from '../user/service.service';
   styleUrls: ['./themes-lists.component.css'],
 })
 export class ThemesListsComponent implements OnInit {
-  themes: Theme[] = []
-  constructor(private api: ApiService, private userService: UserService) { }
+  themes: Theme[] = [];
+  constructor(private api: ApiService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.api.getThemes().subscribe((themes) => {
       // console.log(themes);
-      this.themes = themes
+      this.themes = themes;
     });
   }
 
   get isLoggedIn(): boolean {
-    return this.userService.isLogged
+    return this.userService.isLogged;
   }
 
   get userId(): string {
-    return this.userService.user?.id || "";
+    return this.userService.user?.id || '';
   }
 
   isSubscribed(theme: Theme) {
-    const isSubscribedUser = theme.subscribers.find(s => s === this.userId)
-    return !!isSubscribedUser
+    const isSubscribedUser = theme.subscribers.find((s) => s === this.userId);
+    return !isSubscribedUser;
   }
 }

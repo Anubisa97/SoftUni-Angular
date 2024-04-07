@@ -8,22 +8,27 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserModule } from './user/user.module';
 import { ThemeModule } from './theme/theme.module';
-import { ErrorComponent } from './error/error.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ErrorComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NotFoundComponent,
+    AuthenticateComponent,
+  ],
   imports: [
     BrowserModule,
     CoreModule,
     SharedModule,
     HttpClientModule,
-    UserModule,
     ThemeModule,
     AppRoutingModule,
   ],
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

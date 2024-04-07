@@ -14,7 +14,7 @@
       </div>
       <div class="flex">
         <p>Phone:</p>
-        <p>+359 {{ profileDetails.phoneNumber }}</p>
+        <p>+359 {{ profileDetails.tel }}</p>
       </div>
       <button class="edit-button" (click)="toggleMode()">Edit</button>
     </ng-container>
@@ -71,8 +71,8 @@
               type="text"
               name="tel"
               id="tel"
-              [value]="profileDetails.phoneNumber"
-              formControlName="phoneNumber"
+              [value]="profileDetails.tel"
+              formControlName="tel"
             />
           </div>
         </div>
