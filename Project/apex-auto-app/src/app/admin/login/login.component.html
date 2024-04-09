@@ -1,0 +1,70 @@
+<section
+  style="padding: 80px 0px"
+  class="contact_section layout_padding-bottom"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <div class="heading_container">
+            <h2>Log In</h2>
+          </div>
+          <form #form="ngForm" (ngSubmit)="login(form)">
+            <div>
+              <input
+                name="email"
+                type="email"
+                placeholder="Your Email"
+                id="email"
+                ngModel
+                #inputEmail="ngModel"
+                required
+              />
+            </div>
+            <ng-container *ngIf="inputEmail.touched">
+              <p class="error" *ngIf="inputEmail.errors?.['required']">
+                Email is required!
+              </p>
+              <p class="error" *ngIf="inputEmail.errors?.['emailValidator']">
+                Email is not valid!
+              </p>
+            </ng-container>
+            <div>
+              <input
+                type="password"
+                placeholder="******"
+                name="password"
+                id="password"
+                ngModel
+                #inputPassword="ngModel"
+                required
+                minlength="5"
+              />
+            </div>
+            <ng-container *ngIf="inputPassword.touched">
+              <p class="error" *ngIf="inputPassword.errors?.['required']">
+                Password is required!
+              </p>
+              <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+                Password must be at least 5 characters!
+              </p>
+            </ng-container>
+
+            <div class="btn_box">
+              <button>Log in</button>
+            </div>
+          </form>
+          <p class="text-center">
+            If you do not have an account only an Administrator can crete one
+            for you?
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="../../../assets/media/contact-img.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

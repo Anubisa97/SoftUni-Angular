@@ -1,0 +1,30 @@
+.article-btn {
+    display: flex;
+    padding: 10px 15px;
+    position: relative;
+    margin: 5px;
+    width: 175px;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #ff6f3d;
+    color: white;
+    border: 1px solid #ff6f3d;
+    transition: all .3s;
+
+    &:hover {
+      background-color: transparent;
+      color: #ff6f3d;
+    }
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container_width {
+  padding: 20px 0px;
+  max-width: 1400px;
+  height: auto;
+  margin: 0 auto;
+}

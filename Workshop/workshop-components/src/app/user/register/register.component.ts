@@ -31,7 +31,7 @@ export class RegisterComponent {
     private userService: UserService,
     private fb: FormBuilder,
     private router: Router
-  ) {}
+  ) { }
 
   register(): void {
     if (this.form.invalid) {

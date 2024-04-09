@@ -1,0 +1,126 @@
+<section
+  style="padding: 80px 0px"
+  class="contact_section layout_padding-bottom"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <div class="heading_container">
+            <h2>Register an Admin</h2>
+          </div>
+          <form [formGroup]="form" (ngSubmit)="register()">
+            <div>
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                id="username"
+                formControlName="username"
+              />
+              <ng-container *ngIf="form.get('username')?.touched">
+                <p
+                  class="error"
+                  *ngIf="form.get('username')?.errors?.['required']"
+                >
+                  Username is required!
+                </p>
+                <p
+                  class="error"
+                  *ngIf="form.get('username')?.errors?.['minlength']"
+                >
+                  Username must be at least 5 characters!
+                </p>
+              </ng-container>
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                id="email"
+                formControlName="email"
+              />
+              <ng-container *ngIf="form.get('email')?.touched">
+                <p
+                  class="error"
+                  *ngIf="form.get('email')?.errors?.['required']"
+                >
+                  Email is required!
+                </p>
+                <p
+                  class="error"
+                  *ngIf="form.get('email')?.errors?.['emailValidator']"
+                >
+                  Email is not valid!
+                </p>
+              </ng-container>
+            </div>
+            <ng-container formGroupName="passGroup">
+              <div>
+                <input
+                  type="password"
+                  placeholder="******"
+                  name="password"
+                  id="password"
+                  formControlName="password"
+                />
+                <ng-container
+                  *ngIf="form.get('passGroup')?.get('password')?.touched"
+                >
+                  <p
+                    class="error"
+                    *ngIf="form.get('passGroup')?.get('password')?.errors?.['required']"
+                  >
+                    Password is required!
+                  </p>
+                  <p
+                    class="error"
+                    *ngIf="form.get('passGroup')?.get('password')?.errors?.['minlength']"
+                  >
+                    Password must be at least 5 characters!
+                  </p>
+                </ng-container>
+              </div>
+              <div>
+                <input
+                  type="password"
+                  placeholder="******"
+                  name="rePassword"
+                  id="rePassword"
+                  formControlName="rePassword"
+                />
+                <ng-container
+                  *ngIf="form.get('passGroup')?.get('rePassword')?.touched"
+                >
+                  <p
+                    class="error"
+                    *ngIf="form.get('passGroup')?.errors?.['matchPasswordValidator'] || form.get('passGroup')?.get('rePassword')?.errors?.['required']"
+                  >
+                    Repeat Password does not match password!
+                  </p>
+                </ng-container>
+              </div>
+            </ng-container>
+            <div class="btn_box">
+              <button
+                [disabled]="form.invalid"
+                [style]="{
+                  opacity: form.invalid ? '60%' : '',
+                  cursor: form.invalid ? 'not-allowed' : ''
+                }"
+              >
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="../../../assets/media/contact-img.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
