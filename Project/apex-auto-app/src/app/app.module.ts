@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { MainModule } from './main/main.module';
-// import { MainRoutingModule } from './main/main-routing.module';
+import { MainRoutingModule } from './main/main-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { MainModule } from './main/main.module';
     AppRoutingModule,
     CoreModule,
     MainModule,
-    // MainRoutingModule,
+    MainRoutingModule,
 
   ],
   providers: [],
