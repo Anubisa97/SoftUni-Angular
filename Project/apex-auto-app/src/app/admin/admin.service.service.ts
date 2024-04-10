@@ -69,11 +69,11 @@ export class adminService implements OnDestroy {
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
-  updateProfile(username: string, email: string, tel?: string) {
-    return this.http
-      .put<UserForAuth>('/api/users/profile', { username, email, tel })
-      .pipe(tap((user) => this.user$$.next(user)));
-  }
+  // updateProfile(username: string, email: string, tel?: string) {
+  //   return this.http
+  //     .put<UserForAuth>('/api/users/profile', { username, email, tel })
+  //     .pipe(tap((user) => this.user$$.next(user)));
+  // }
 
   ngOnDestroy(): void {
     this.userSubscription.unsubscribe();

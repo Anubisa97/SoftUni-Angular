@@ -9,10 +9,15 @@ import { CarNewsComponent } from '../posts/car-news/car-news.component';
 import { LoginComponent } from '../admin/login/login.component';
 import { RegisterComponent } from '../admin/register/register.component';
 import { ArticleDetailsComponent } from '../posts/article-details/article-details.component';
+import { ErrorComponent } from './error/error.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '' },
   { path: '', component: HomeComponent },
+  { path: 'error', component: ErrorComponent },
+  { path: '**', redirectTo: '/404' },
+  { path: '404', component: NotFoundComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'why-us', component: WhyUsComponent },
   { path: 'contact', component: ContactComponent },

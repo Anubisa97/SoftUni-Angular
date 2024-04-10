@@ -4,7 +4,11 @@
 // @import url('./assets/css/style.css.map');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-
+// @font-face {
+//   font-family: "Roboto",
+//     sans-serif;
+//   src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+// }
 
 // SCSS
 
@@ -17,6 +21,7 @@ $textCol: #999;
 
 @mixin main-font {
   font-family: "Roboto", sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 }
 
 @mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
