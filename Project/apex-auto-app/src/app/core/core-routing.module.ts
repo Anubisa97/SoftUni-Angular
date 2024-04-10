@@ -8,27 +8,24 @@ import { ArticlesComponent } from '../posts/articles/articles.component';
 import { CarNewsComponent } from '../posts/car-news/car-news.component';
 import { LoginComponent } from '../admin/login/login.component';
 import { RegisterComponent } from '../admin/register/register.component';
-import { TestComponent } from '../admin/test/test.component';
 import { ArticleDetailsComponent } from '../posts/article-details/article-details.component';
 
 const routes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: '' },
-    { path: '', component: HomeComponent },
-    { path: "services", component: ServicesComponent },
-    { path: "why-us", component: WhyUsComponent },
-    { path: "contact", component: ContactComponent },
-    { path: "articles", component: ArticlesComponent },
-    { path: "news", component: CarNewsComponent },
-    { path: "login", component: LoginComponent },
-    { path: "register", component: RegisterComponent },
-    { path: "test", component: TestComponent },
-    { path: "articles", component: ArticlesComponent },
-    { path: "article", component: ArticleDetailsComponent },
-
+  { path: '', pathMatch: 'full', redirectTo: '' },
+  { path: '', component: HomeComponent },
+  { path: 'services', component: ServicesComponent },
+  { path: 'why-us', component: WhyUsComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'articles', component: ArticlesComponent },
+  { path: 'news', component: CarNewsComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'articles', component: ArticlesComponent },
+  { path: 'article', component: ArticleDetailsComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class CoreRoutingModule { }
+export class CoreRoutingModule {}

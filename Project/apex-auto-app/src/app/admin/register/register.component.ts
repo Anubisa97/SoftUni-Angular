@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
   form = this.fb.group({
@@ -31,7 +31,7 @@ export class RegisterComponent {
     private adminService: adminService,
     private fb: FormBuilder,
     private router: Router
-  ) { }
+  ) {}
 
   register(): void {
     if (this.form.invalid) {
@@ -47,6 +47,6 @@ export class RegisterComponent {
 
     this.adminService
       .register(username!, email!, tel!, password!, rePassword!)
-      .subscribe(() => this.router.navigate(['/themes']));
+      .subscribe(() => this.router.navigate(['']));
   }
 }

@@ -12,6 +12,7 @@ import { ErrorService } from './core/error/error.service';
 import { Router, RouterModule } from '@angular/router';
 
 const { apiUrl } = environment;
+
 @Injectable()
 class AppInterceptor implements HttpInterceptor {
   API = '/api';
@@ -31,7 +32,8 @@ class AppInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err) => {
         if (err.status === 401) {
-          this.router.navigate(['/auth/login']);
+          this.router.navigate(['/login']);
+          // will need to be changed to save state to this.router.navigate(['/auth/login']);
         } else {
           this.errorService.setError(err);
           this.router.navigate(['/error']);

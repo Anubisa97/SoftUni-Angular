@@ -4,23 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-
+import { CoreRoutingModule } from '../core/core-routing.module';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-  ],
+  declarations: [LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    CoreRoutingModule,
   ],
-  exports: [
-    LoginComponent,
-    RegisterComponent,
-  ]
 })
-export class AdminModule { }
+export class AdminModule {}

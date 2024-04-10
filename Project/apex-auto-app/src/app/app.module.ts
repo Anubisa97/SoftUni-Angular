@@ -11,14 +11,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
 import { CoreRoutingModule } from './core/core-routing.module';
 import { PostsModule } from './posts/posts.module';
-// import { NotFoundComponent } from './error/404/not-found.component;
+import { HttpClientModule } from '@angular/common/http';
+import { appInterceptorProvider } from './app.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AuthenticateComponent,
-    // NotFoundComponent,
-  ],
+  declarations: [AppComponent, AuthenticateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,10 +26,10 @@ import { PostsModule } from './posts/posts.module';
     FormsModule,
     ReactiveFormsModule,
     AdminModule,
-    PostsModule
-
+    PostsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [appInterceptorProvider],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

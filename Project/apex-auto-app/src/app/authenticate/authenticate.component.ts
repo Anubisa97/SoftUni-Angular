@@ -4,11 +4,11 @@ import { adminService } from '../admin/admin.service.service';
 @Component({
   selector: 'app-authenticate',
   templateUrl: './authenticate.component.html',
-  styleUrls: ['./authenticate.component.css'],
+  styleUrls: ['./authenticate.component.scss'],
 })
 export class AuthenticateComponent implements OnInit {
   isAuthenticating = true;
-  constructor(private adminService: adminService) { }
+  constructor(private adminService: adminService) {}
 
   ngOnInit(): void {
     this.adminService.getProfile().subscribe({
@@ -24,3 +24,6 @@ export class AuthenticateComponent implements OnInit {
     });
   }
 }
+// export class AuthenticateComponent {
+//   isAuthenticating = true;
+// }
