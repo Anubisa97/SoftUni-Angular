@@ -17,7 +17,7 @@ const { apiUrl } = environment;
 class AppInterceptor implements HttpInterceptor {
   API = '/api';
 
-  constructor(private errorService: ErrorService, private router: Router) {}
+  constructor(private errorService: ErrorService, private router: Router) { }
 
   intercept(
     req: HttpRequest<any>,
@@ -32,7 +32,7 @@ class AppInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError((err) => {
         if (err.status === 401) {
-          this.router.navigate(['/auth/login']);
+          // this.router.navigate(['/auth/login']);
           // will need to be changed to save state to this.router.navigate(['/auth/login']);
         } else {
           this.errorService.setError(err);

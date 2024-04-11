@@ -8,7 +8,7 @@ import { adminService } from 'src/app/admin/admin.service.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  constructor(private adminService: adminService, private router: Router) {}
+  constructor(private adminService: adminService, private router: Router) { }
 
   get isLoggedIn(): boolean {
     return this.adminService.isLogged;
@@ -21,10 +21,10 @@ export class HeaderComponent {
   logout() {
     this.adminService.logout().subscribe({
       next: () => {
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
       },
       error: () => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
       },
     });
   }

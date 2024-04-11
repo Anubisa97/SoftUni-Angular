@@ -8,29 +8,26 @@ import { ArticlesComponent } from '../posts/articles/articles.component';
 import { CarNewsComponent } from '../posts/car-news/car-news.component';
 import { LoginComponent } from '../admin/login/login.component';
 import { RegisterComponent } from '../admin/register/register.component';
-import { ArticleDetailsComponent } from '../posts/article-details/article-details.component';
-import { ErrorComponent } from './error/error.component';
-import { NotFoundComponent } from './error/not-found/not-found.component';
+import { AddArticleComponent } from '../posts/add-article/add-article.component';
+import { AuthActivate } from '../guards/auth.guard';
+
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '' },
-  { path: '', component: HomeComponent },
-  { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: '/404' },
-  { path: '404', component: NotFoundComponent },
+  // { path: '', pathMatch: 'full', redirectTo: '/home' },
+  // { path: 'home', component: HomeComponent },
+
   { path: 'services', component: ServicesComponent },
   { path: 'why-us', component: WhyUsComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'articles', component: ArticlesComponent },
   { path: 'news', component: CarNewsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'articles', component: ArticlesComponent },
-  { path: 'article', component: ArticleDetailsComponent },
+  { path: 'login', component: LoginComponent, },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthActivate] },
+  { path: 'themes', component: ArticlesComponent },
+  { path: 'add-article', component: AddArticleComponent, canActivate: [AuthActivate] }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CoreRoutingModule {}
+export class CoreRoutingModule { }

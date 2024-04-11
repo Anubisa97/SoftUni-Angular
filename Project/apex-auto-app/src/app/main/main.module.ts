@@ -6,11 +6,12 @@ import { ServicesComponent } from './services/services.component';
 import { WhyUsComponent } from './why-us/why-us.component';
 // import { MainRoutingModule } from './main-routing.module';
 import { RouterModule } from '@angular/router';
+import { SelectedServiceComponent } from './selected-service/selected-service.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, ContactComponent, ServicesComponent, WhyUsComponent],
+  declarations: [HomeComponent, ContactComponent, ServicesComponent, WhyUsComponent, SelectedServiceComponent],
   imports: [
     CommonModule, RouterModule
   ],

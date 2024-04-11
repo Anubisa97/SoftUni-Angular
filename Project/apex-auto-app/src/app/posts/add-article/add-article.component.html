@@ -1,0 +1,84 @@
+<section
+  style="padding: 80px 0px"
+  class="contact_section layout_padding-bottom"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <div class="heading_container">
+            <h2>Create a new Article</h2>
+          </div>
+          <form #form="ngForm" (ngSubmit)="addArticle(form)">
+            <div>
+              <input
+                type="text"
+                placeholder="Article Title"
+                name="articleTitle"
+                id="article"
+                ngModel
+                #article="ngModel"
+              />
+              <ng-container *ngIf="article.touched">
+                <p class="error" *ngIf="article.errors?.['required']">
+                  Article name is required.
+                </p>
+                <p class="error" *ngIf="article.errors?.['minlength']">
+                  Article name must be at least 5 characters long.
+                </p>
+              </ng-container>
+            </div>
+            <div>
+              <!-- <input
+                type="text"
+                placeholder="Article Text..."
+                name="text"
+                id="text"
+                ngModel
+                #text="ngModel"
+              /> -->
+              <textarea
+                type="text"
+                name="articleText"
+                id="text"
+                rows="8"
+                cols="50"
+                class="height"
+                ngModel
+                #text="ngModel"
+                required
+                minlength="10"
+                style="width: 100%"
+                placeholder="Add text to your article"
+              ></textarea>
+              <ng-container *ngIf="text.touched">
+                <p class="error" *ngIf="text.errors?.['required']">
+                  The text with your article is required.
+                </p>
+                <p class="error" *ngIf="text.errors?.['minlength']">
+                  Article text must be at least 10 characters long.
+                </p>
+              </ng-container>
+            </div>
+            <div class="btn_box">
+              <button
+                [disabled]="form.invalid"
+                [style]="{
+                  opacity: form.invalid ? '60%' : '',
+                  cursor: form.invalid ? 'not-allowed' : ''
+                }"
+              >
+                Add Theme
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="../../../assets/media/contact-img.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

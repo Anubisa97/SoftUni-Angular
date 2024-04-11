@@ -10,4 +10,5 @@ export interface Theme {
   created_at: string;
   updatedAt: string;
   __v: number;
+  text: string;
 }

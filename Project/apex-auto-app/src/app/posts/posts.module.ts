@@ -4,6 +4,10 @@ import { CarNewsComponent } from './car-news/car-news.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PostsRoutingModule } from './post-routing.module';
+import { AddArticleComponent } from './add-article/add-article.component';
+import { SharedModule } from "../shared/shared.module";
 
 
 
@@ -11,12 +15,16 @@ import { RouterModule } from '@angular/router';
   declarations: [
     CarNewsComponent,
     ArticlesComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    AddArticleComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
-  ],
-
+    RouterModule,
+    FormsModule,
+    PostsRoutingModule,
+    ReactiveFormsModule,
+    SharedModule
+  ]
 })
 export class PostsModule { }

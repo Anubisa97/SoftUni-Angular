@@ -32,4 +32,4 @@ import { appInterceptorProvider } from './app.interceptor';
   providers: [appInterceptorProvider],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

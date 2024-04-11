@@ -28,6 +28,7 @@ export class UserService implements OnDestroy {
   login(email: string, password: string) {
     return this.http.post<UserForAuth>('/api/login', { email, password }).pipe(
       tap((user) => {
+        localStorage.setItem('user', JSON.stringify(user));
         this.user$$.next(user);
       })
     );
@@ -62,6 +63,13 @@ export class UserService implements OnDestroy {
       })
     );
   }
+
+  // from API
+  // getProfile() { 
+  //   return this.http
+  //     .get<UserForAuth>('/api/users/profile')
+  //     .pipe(tap((user) => this.user$$.next(user)));
+  // }
 
   getProfile() {
     return this.http

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { Theme } from './types/theme';
 import { Post } from './types/post';
+import { Service } from './types/service-post';
 
 @Injectable({
   providedIn: 'root',
@@ -34,8 +35,26 @@ export class ApiService {
     return this.http.get<Post[]>(`${url}`);
   }
 
-  // getPost(themeId: string) {
-  //   const theme = this.getTheme(themeId)
-  //   const posts = theme.posts;
+  editTheme(id: string, text: string,) {
+    return this.http
+      .put<Theme>('/api/users/profile', { text })
+    // .pipe(tap((user) => this.user$$.next(user)));
+  }
+
+  getServices() {
+    const { firebaseApiUrl } = environment;
+    return this.http.get<Service[]>(`${firebaseApiUrl}/articles/.json`);
+  }
+
+  getService(id: string) {
+    const { firebaseApiUrl } = environment;
+    return this.http.get<Service>(`${firebaseApiUrl}/articles/${id}/.json`);
+  }
+  // getPostText(id: string) {
+  //   const { apiUrl } = environment;
+  //   let url = `/api/posts/theme`;
+  //   return this.http.get<any>(`${url}:${id}`);
   // }
+
+
 }

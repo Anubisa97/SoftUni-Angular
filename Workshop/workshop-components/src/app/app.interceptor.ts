@@ -16,7 +16,7 @@ const { apiUrl } = environment;
 class AppInterceptor implements HttpInterceptor {
   API = '/api';
 
-  constructor(private errorService: ErrorService, private router: Router) {}
+  constructor(private errorService: ErrorService, private router: Router) { }
 
   intercept(
     req: HttpRequest<any>,

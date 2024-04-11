@@ -1,0 +1,36 @@
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+    <div class="row g-5">
+      <div class="">
+        <article class="blog-details">
+          <div class="post-img">
+            <img src="{{ service.img }}" alt="" class="img-fluid" />
+          </div>
+
+          <h2 class="title">
+            {{ service.title }}
+          </h2>
+          <div class="meta-top">
+            <ul>
+              <li class="d-flex align-items-center">
+                <i class="bi bi-person"></i>
+                <a href="blog-details.html">Admin</a>
+              </li>
+              <li class="d-flex align-items-center">
+                <i class="bi bi-clock"></i>
+                <a href="blog-details.html"
+                  ><time datetime="2020-01-01">{{ service.date }}</time></a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="content">
+            <p>
+              {{ service.content }}
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
