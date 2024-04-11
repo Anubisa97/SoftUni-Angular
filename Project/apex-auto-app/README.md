@@ -22,3 +22,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 This project requires the use of the Rest Api which uses MongoDB provided in the course and Firebase - Realtime Database.
 
 ## Local DB
+
+To access the local database the user will need to restore it by using the follwoing comand with the path to the /folders directory "mongorestore -d forum C:\Users\Name\Downloads\resources\forum"
